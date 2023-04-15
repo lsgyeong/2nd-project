@@ -62,7 +62,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(62, 32);
+            this.label5.Location = new System.Drawing.Point(57, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 6;
@@ -88,7 +88,7 @@
             this.pictureBox2.Image = global::cnn_project.Properties.Resources.잠;
             this.pictureBox2.Location = new System.Drawing.Point(-6, -5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(500, 606);
+            this.pictureBox2.Size = new System.Drawing.Size(497, 609);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(63, 354);
+            this.label2.Location = new System.Drawing.Point(59, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 25;
@@ -151,7 +151,7 @@
             // 
             this.test.AutoSize = true;
             this.test.Font = new System.Drawing.Font("경기천년제목B Bold", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.test.Location = new System.Drawing.Point(170, 424);
+            this.test.Location = new System.Drawing.Point(167, 431);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(189, 47);
             this.test.TabIndex = 26;
@@ -173,7 +173,7 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button1.Location = new System.Drawing.Point(167, 480);
+            this.guna2Button1.Location = new System.Drawing.Point(167, 498);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(76, 37);
             this.guna2Button1.TabIndex = 28;
@@ -195,7 +195,7 @@
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button2.Location = new System.Drawing.Point(283, 479);
+            this.guna2Button2.Location = new System.Drawing.Point(272, 498);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(76, 37);
             this.guna2Button2.TabIndex = 29;
@@ -206,7 +206,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(196, 393);
+            this.label3.Location = new System.Drawing.Point(191, 398);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 16);
             this.label3.TabIndex = 30;
