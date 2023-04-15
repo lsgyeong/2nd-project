@@ -56,7 +56,7 @@ namespace cnn_project
         public Form2()
         {
             InitializeComponent();
-            client.Connect("10.10.21.124", 9999);
+            client.Connect("10.10.21.102", 6666);
             video_start();
             receive_start();
         }
@@ -120,40 +120,36 @@ namespace cnn_project
                     case "졸음감지":
                         //여기에 졸음감지 시그널이 들어옵니다
                         Console.WriteLine(response);
-
+                        try
+                        {
+                            wmp.URL = @"C:/Users/2352/source/repos/2nd-project/Resources/alarm.mp3";
+                            music = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
                         break;
                     case "졸음미감지":
-                        //여기에 졸음미감지 시그널이 들어옵니다
                         Console.WriteLine(response);
-
+                        try
+                        {
+                            music = false;
+                            wmp.controls.stop();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
                         break;
                 }
                 if (response == "졸음감지")
                 {
-                    //여기에 졸음감지 시그널이 들어옵니다
-                    Console.WriteLine(response);
-                    try
-                    {
-                        wmp.URL = @"C:/Users/Kiot/source/repos/2nd_corporate_project/Resources/alarm.mp3";
-                        music = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
+                    
                 }
                 else
                 {
-                    Console.WriteLine(response);
-                    try
-                    {
-                        music = false;
-                        wmp.controls.stop();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
+                    
                 }
             }
         }
@@ -281,7 +277,7 @@ namespace cnn_project
 
             stream1.Close();
             client.Close();
-
+            music = false;
             timer1.Stop();
 
             this.Hide();

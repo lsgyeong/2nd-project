@@ -117,9 +117,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("경기천년제목B Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(182, 105);
+            this.label5.Location = new System.Drawing.Point(159, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 34);
+            this.label5.Size = new System.Drawing.Size(170, 34);
             this.label5.TabIndex = 16;
             this.label5.Text = "환자졸음방지";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
