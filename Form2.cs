@@ -242,7 +242,7 @@ namespace cnn_project
             }
         }
 
-        // 맞다 눌렀을 때 다음 문제 나옴
+        // 맞다(yes) 눌렀을 때 다음 문제 나옴
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             try
@@ -267,7 +267,7 @@ namespace cnn_project
             }
         }
 
-        // 아니다 눌렀을 때 경고음 나옴
+        // 아니다(NO) 눌렀을 때 경고음 나옴
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             onePing();
