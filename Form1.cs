@@ -36,6 +36,11 @@ namespace cnn_project
                 MessageBox.Show("투여 마취제 용량을 작성해주세요");
             }
 
+            else if (tbx_timer.Text.Length == 0)
+            {
+                MessageBox.Show("타이머 시간을 작성해주세요");
+            }
+
             else
             {
                 try
