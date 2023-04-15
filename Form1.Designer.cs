@@ -121,7 +121,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 34);
             this.label5.TabIndex = 16;
-            this.label5.Text = "졸음경보기";
+            this.label5.Text = "환자졸음방지";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
