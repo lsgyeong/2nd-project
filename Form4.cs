@@ -24,5 +24,10 @@ namespace cnn_project
             start_form.ShowDialog();
             this.Close();
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
