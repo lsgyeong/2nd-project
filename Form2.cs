@@ -48,6 +48,7 @@ namespace cnn_project
         WindowsMediaPlayer wmp;
 
         DateTime now; // 타이머가 동작할 목표 시간을 저장할 DateTime 변수 선언
+
         public static string Code { get; set; }
         string timer_minute = Code;
         bool music = false;
@@ -60,6 +61,7 @@ namespace cnn_project
             receive_start();
         }
 
+        // 폼 로드시 실행해야할 것들
         private void Form2_Load(object sender, EventArgs e)
         {
 
@@ -94,6 +96,8 @@ namespace cnn_project
 
             receiveThread.Start();      // 스레드 시작
         }
+        
+        // 서버로부터 졸음감지 시그널을 받음
         private void ReceiveSignal()
         {
             while (true)
@@ -137,7 +141,6 @@ namespace cnn_project
                     {
                         Console.WriteLine(ex.ToString());
                     }
-
                 }
                 else
                 {
@@ -161,6 +164,7 @@ namespace cnn_project
             videoThread.Start();
         }
 
+        // 영상을 캡쳐해서 서버로 전송 및 픽쳐박스에 띄움?  
         private void CameraCallback()
         {
 
@@ -182,9 +186,9 @@ namespace cnn_project
                 }
                 Thread.Sleep(50);
             }
-
         }
 
+        // 폼 종료시 이벤트
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
@@ -199,7 +203,7 @@ namespace cnn_project
             client.Close();
         }
 
-        // 첫번째 화면으로 돌아감
+        // 두번째 화면으로 돌아감
         private void button2_Click_1(object sender, EventArgs e)
         {
             // form1로 이동
@@ -212,6 +216,7 @@ namespace cnn_project
             button2.Visible = false;
         }
 
+        // 입력한 타이머 시간 거꾸로 내려감
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             timer1.Interval = 1000; // 타이머 간격을 1000밀리초(1초)로 설정합니다.
@@ -237,6 +242,7 @@ namespace cnn_project
             }
         }
 
+        // 맞다 눌렀을 때 다음 문제 나옴
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             try
@@ -261,11 +267,13 @@ namespace cnn_project
             }
         }
 
+        // 아니다 눌렀을 때 경고음 나옴
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             onePing();
         }
 
+        // 취소버튼 누를시 2번째 페이지로 이동
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             videoThread.Abort();
@@ -281,6 +289,8 @@ namespace cnn_project
             first_form.ShowDialog();
             this.Close();
         }
+
+        // 시스템 경고음 함수
         public void onePing()
         {
             SystemSounds.Beep.Play();
