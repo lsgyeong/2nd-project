@@ -195,7 +195,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::cnn_project.Properties.Resources._2622422_removebg_preview;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(490, 600);
+            this.ClientSize = new System.Drawing.Size(490, 597);
             this.Controls.Add(this.btn_go);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

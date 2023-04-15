@@ -52,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(36, 314);
+            this.label1.Location = new System.Drawing.Point(72, 314);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(36, 32);
+            this.label5.Location = new System.Drawing.Point(62, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 6;
@@ -76,7 +76,7 @@
             // 
             this.lbl_timer.AutoSize = true;
             this.lbl_timer.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_timer.Location = new System.Drawing.Point(121, 314);
+            this.lbl_timer.Location = new System.Drawing.Point(184, 314);
             this.lbl_timer.Name = "lbl_timer";
             this.lbl_timer.Size = new System.Drawing.Size(67, 16);
             this.lbl_timer.TabIndex = 4;
@@ -88,7 +88,7 @@
             this.pictureBox2.Image = global::cnn_project.Properties.Resources.잠;
             this.pictureBox2.Location = new System.Drawing.Point(-6, -5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(487, 573);
+            this.pictureBox2.Size = new System.Drawing.Size(500, 606);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -97,7 +97,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::cnn_project.Properties.Resources._17;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(60, 55);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(389, 219);
@@ -121,7 +121,7 @@
             this.button2.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.button2.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.button2.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.button2.Location = new System.Drawing.Point(197, 393);
+            this.button2.Location = new System.Drawing.Point(228, 407);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 37);
             this.button2.TabIndex = 23;
@@ -131,7 +131,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(39, 373);
+            this.pictureBox3.Location = new System.Drawing.Point(60, 373);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(389, 176);
             this.pictureBox3.TabIndex = 24;
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(36, 354);
+            this.label2.Location = new System.Drawing.Point(63, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 25;
@@ -151,7 +151,7 @@
             // 
             this.test.AutoSize = true;
             this.test.Font = new System.Drawing.Font("경기천년제목B Bold", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.test.Location = new System.Drawing.Point(145, 416);
+            this.test.Location = new System.Drawing.Point(170, 424);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(189, 47);
             this.test.TabIndex = 26;
@@ -173,7 +173,7 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button1.Location = new System.Drawing.Point(126, 474);
+            this.guna2Button1.Location = new System.Drawing.Point(167, 480);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(76, 37);
             this.guna2Button1.TabIndex = 28;
@@ -195,7 +195,7 @@
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button2.Location = new System.Drawing.Point(268, 474);
+            this.guna2Button2.Location = new System.Drawing.Point(283, 479);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(76, 37);
             this.guna2Button2.TabIndex = 29;
@@ -206,7 +206,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(169, 393);
+            this.label3.Location = new System.Drawing.Point(196, 393);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 16);
             this.label3.TabIndex = 30;
@@ -227,7 +227,7 @@
             this.btn_cancel.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.btn_cancel.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.btn_cancel.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.btn_cancel.Location = new System.Drawing.Point(352, 304);
+            this.btn_cancel.Location = new System.Drawing.Point(370, 304);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(76, 37);
             this.btn_cancel.TabIndex = 31;
@@ -239,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(474, 561);
+            this.ClientSize = new System.Drawing.Size(490, 597);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
