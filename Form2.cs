@@ -29,6 +29,8 @@ using Mysqlx.Crud;
 using System.Security.Cryptography;
 using Mysqlx.Notice;
 using static System.Net.Mime.MediaTypeNames;
+using Guna.UI2.WinForms;
+
 
 namespace cnn_project
 {
@@ -52,11 +54,12 @@ namespace cnn_project
         public static string Code { get; set; }
         string timer_minute = Code;
         bool music = false;
-        
+        string answer;
+
         public Form2()
         {
             InitializeComponent();
-            client.Connect("10.10.21.102", 6666);
+            client.Connect("10.10.21.124", 9999);
             video_start();
             receive_start();
         }
@@ -68,6 +71,9 @@ namespace cnn_project
             now = DateTime.Now.AddMinutes(Int32.Parse($"{timer_minute}")); // 현재 시간에 타이머 분 수를 더하여 타이머가 동작할 목표 시간을 설정합니다.
             timer1.Start(); // 타이머를 시작합니다.
 
+            timer2.Interval = 3000;
+            timer2.Enabled = true;
+
             try
             {
                 string selectQuery = "SELECT * FROM medical_details.number_test ORDER BY RAND() LIMIT 1";
@@ -77,7 +83,8 @@ namespace cnn_project
 
                 while (table.Read())
                 {
-                    Console.WriteLine("번호: {0}, 문제: {1}", table["num"], table["test"]);
+                    Console.WriteLine("번호: {0}, 문제: {1}, 답: {2}", table["num"], table["test"], table["answer"]);
+                    answer = table["answer"].ToString();
                     test.Text = table["test"].ToString();
                 }
                 connection.Close();
@@ -122,8 +129,9 @@ namespace cnn_project
                         Console.WriteLine(response);
                         try
                         {
-                            wmp.URL = @"C:/Users/2352/source/repos/2nd-project/Resources/alarm.mp3";
+                            wmp.URL = @"C:/Users/Kiot/source/repos/2nd-project/Resources/alarm.mp3";
                             music = true;
+                            label4.Invoke(new MethodInvoker(delegate { label4.Visible = true; }));
                         }
                         catch (Exception ex)
                         {
@@ -136,20 +144,13 @@ namespace cnn_project
                         {
                             music = false;
                             wmp.controls.stop();
+                            label4.Invoke(new MethodInvoker(delegate { label4.Visible = false; }));
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine(ex.ToString());
                         }
                         break;
-                }
-                if (response == "졸음감지")
-                {
-                    
-                }
-                else
-                {
-                    
                 }
             }
         }
@@ -178,7 +179,6 @@ namespace cnn_project
 
                     Bitmap bitmap = BitmapConverter.ToBitmap(mat);
                     pictureBox1.Image = bitmap;
-
                 }
                 Thread.Sleep(50);
             }
@@ -188,6 +188,7 @@ namespace cnn_project
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
             wmp.controls.stop();
 
             videoThread.Abort();
@@ -197,6 +198,10 @@ namespace cnn_project
             stream1.Close();
             //stream2.Close();
             client.Close();
+            timer2.Enabled = false;
+            label4.Invoke(new MethodInvoker(delegate { label4.Visible = false; }));
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+            label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
         }
 
         // 두번째 화면으로 돌아감
@@ -210,6 +215,9 @@ namespace cnn_project
 
             pictureBox2.Visible = false;
             button2.Visible = false;
+            label4.Invoke(new MethodInvoker(delegate { label4.Visible = false; }));
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+            label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
         }
 
         // 입력한 타이머 시간 거꾸로 내려감
@@ -233,40 +241,100 @@ namespace cnn_project
                 client.Close();
 
                 timer1.Stop();
+                timer2.Stop();
                 button2.Visible = true;
                 pictureBox2.Visible = true;
+                label4.Invoke(new MethodInvoker(delegate { label4.Visible = false; }));
+                label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+                label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
             }
         }
 
         // 맞다(yes) 눌렀을 때 다음 문제 나옴
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string selectQuery = "SELECT * FROM medical_details.number_test ORDER BY RAND() LIMIT 1";
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
-                MySqlDataReader table = cmd.ExecuteReader();
+            Console.WriteLine(guna2Button1.Text, "112131231gggg", answer);
+            timer2.Enabled = false; // 타이머를 멈춤
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+            label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
 
-                while (table.Read())
+            if (answer == guna2Button1.Text)
+            {
+                try
                 {
-                    Console.WriteLine("번호: {0}, 문제: {1}", table["num"], table["test"]);
-                    test.Text = table["test"].ToString();
-                }
-                connection.Close();
+                    string selectQuery = "SELECT * FROM medical_details.number_test ORDER BY RAND() LIMIT 1 ";
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                    MySqlDataReader table = cmd.ExecuteReader();
 
+                    while (table.Read())
+                    {
+                        Console.WriteLine("번호: {0}, 문제: {1}, 답: {2}", table["num"], table["test"], table["answer"]);
+                        answer = table["answer"].ToString();
+                        test.Text = table["test"].ToString();
+                    }
+                    connection.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("실패");
+                    Console.WriteLine(ex.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("실패");
-                Console.WriteLine(ex.ToString());
+                onePing();
+                label7.Invoke(new MethodInvoker(delegate { label7.Visible = true; }));
+            }
+
+            if (timer2.Enabled == false)
+            {
+                timer2.Enabled = true;
             }
         }
 
         // 아니다(NO) 눌렀을 때 경고음 나옴
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            onePing();
+            Console.WriteLine(guna2Button2.Text, "12gggg", answer);
+            timer2.Enabled = false;
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+            label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
+
+            if (answer == guna2Button2.Text)
+            {
+                try
+                {
+                    string selectQuery = "SELECT * FROM medical_details.number_test ORDER BY RAND() LIMIT 1 ";
+                    connection.Open();
+                    MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                    MySqlDataReader table = cmd.ExecuteReader();
+
+                    while (table.Read())
+                    {
+                        Console.WriteLine("번호: {0}, 문제: {1}, 답: {2}", table["num"], table["test"], table["answer"]);
+                        answer = table["answer"].ToString();
+                        test.Text = table["test"].ToString();
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("실패");
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+            else
+            {
+                onePing();
+                label7.Invoke(new MethodInvoker(delegate { label7.Visible = true; }));
+            }
+
+            if (timer2.Enabled == false)
+            {
+                timer2.Enabled = true;
+            }
         }
 
         // 취소버튼 누를시 2번째 페이지로 이동
@@ -277,8 +345,12 @@ namespace cnn_project
 
             stream1.Close();
             client.Close();
-            music = false;
+
             timer1.Stop();
+            timer2.Stop();
+            label4.Invoke(new MethodInvoker(delegate { label4.Visible = false; }));
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = false; }));
+            label7.Invoke(new MethodInvoker(delegate { label7.Visible = false; }));
 
             this.Hide();
             Form1 first_form = new Form1();
@@ -290,6 +362,12 @@ namespace cnn_project
         public void onePing()
         {
             SystemSounds.Beep.Play();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            onePing();
+            label6.Invoke(new MethodInvoker(delegate { label6.Visible = true; }));
         }
     }
 }

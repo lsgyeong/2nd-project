@@ -43,6 +43,10 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,7 +92,7 @@
             this.pictureBox2.Image = global::cnn_project.Properties.Resources.잠;
             this.pictureBox2.Location = new System.Drawing.Point(-6, -5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(502, 610);
+            this.pictureBox2.Size = new System.Drawing.Size(499, 608);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -121,11 +125,11 @@
             this.button2.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.button2.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.button2.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.button2.Location = new System.Drawing.Point(228, 407);
+            this.button2.Location = new System.Drawing.Point(207, 407);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 37);
             this.button2.TabIndex = 23;
-            this.button2.Text = "처음화면";
+            this.button2.Text = "입력화면";
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -173,11 +177,11 @@
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button1.Location = new System.Drawing.Point(167, 498);
+            this.guna2Button1.Location = new System.Drawing.Point(167, 481);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(76, 37);
             this.guna2Button1.TabIndex = 28;
-            this.guna2Button1.Text = "맞다";
+            this.guna2Button1.Text = "O";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
@@ -195,22 +199,22 @@
             this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Blue;
-            this.guna2Button2.Location = new System.Drawing.Point(272, 498);
+            this.guna2Button2.Location = new System.Drawing.Point(272, 481);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(76, 37);
             this.guna2Button2.TabIndex = 29;
-            this.guna2Button2.Text = "아니다";
+            this.guna2Button2.Text = "X";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("경기천년제목B Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(191, 398);
+            this.label3.Location = new System.Drawing.Point(116, 407);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 16);
+            this.label3.Size = new System.Drawing.Size(310, 16);
             this.label3.TabIndex = 30;
-            this.label3.Text = "맞는 답을 골라주세요";
+            this.label3.Text = "아래 계산식이 맞으면 O, 틀리면 X를 눌러주세요";
             // 
             // btn_cancel
             // 
@@ -234,6 +238,48 @@
             this.btn_cancel.Text = "취소";
             this.btn_cancel.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("경기천년제목B Bold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(113, 227);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(272, 103);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "일어나세요!";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("경기천년제목B Bold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(111, 529);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(289, 49);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "문제를 풀어주세요!";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("경기천년제목B Bold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(109, 527);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(289, 49);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "땡!";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -242,6 +288,9 @@
             this.ClientSize = new System.Drawing.Size(490, 597);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.label1);
@@ -284,5 +333,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_cancel;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
